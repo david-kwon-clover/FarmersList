@@ -22,6 +22,14 @@ class Cart {
         this.cart = [];
         this.total = 0;
     }
+
+    removeItemByName(productName) {
+        const targetIndex = this.products.find((product) => {
+            return product.name === productName;
+        })
+
+        this.products.splice(targetIndex, 1);
+    }
 }
 
 module.exports = Cart;
