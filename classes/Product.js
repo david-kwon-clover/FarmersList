@@ -1,8 +1,9 @@
 class Product {
-    constructor(name, price, description) {
+    constructor(name, price, description, quantity) {
         this.name = name;
         this.price = price;
         this.description = description;
+        this.quantity = quantity;
         this.inStock = true;
         this.rewardPoints = 3;
     }
