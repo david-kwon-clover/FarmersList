@@ -12,9 +12,14 @@ class Customer {
     }
 
     getRewardPoints() {
-        this.orderHistory.forEach((order) => {
-            this.rewardPoints += order.rewardPoints;
-        })
+        const totalRewards = this.orderHistory.reduce((total, cart) => {
+            total += cart.products.reduce((rewards, product) => {
+                rewards += product.rewardPoints;
+                return rewards;
+            }, 0)
+            return total;
+        }, 0)
+        return totalRewards;
     }
 }
 

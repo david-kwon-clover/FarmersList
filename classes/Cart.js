@@ -9,8 +9,8 @@ class Cart {
             throw new Error(`I'm sorry there are only ${product.quantity} of this product left`);
         }
         this.products.push(product);
-        this.total += product.price;
-        product.quantity -= 1;
+        this.total += product.price * quantity;
+        product.quantity -= quantity;
         if(product.quantity === 0) {
             product.inStock = false;
         }
@@ -27,7 +27,7 @@ class Cart {
     }
 
     clear() {
-        this.cart = [];
+        this.products = [];
         this.total = 0;
     }
 
