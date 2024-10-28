@@ -4,6 +4,7 @@ class Product {
         this.price = price;
         this.description = description;
         this.inStock = true;
+        this.rewardPoints = 3;
     }
 
     display() {
