@@ -7,10 +7,8 @@ class Product {
     }
 
     display() {
-        return `Name: ${this.name},\nPrice:${this.price},\nDescription: ${this.description}`;
+        return `Name: ${this.name}, Price: $${this.price}, Description: ${this.description}`;
     }
 }
 
-module.exports = {
-    Product
-}
+module.exports = Product;
