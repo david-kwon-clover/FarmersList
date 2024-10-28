@@ -13,6 +13,15 @@ class Cart {
         this.total -= this.products[index].price;
         this.products.splice(index, 1);
     } 
+
+    getTotal() {
+        return this.total;
+    }
+
+    clear() {
+        this.cart = [];
+        this.total = 0;
+    }
 }
 
 module.exports = Cart;
