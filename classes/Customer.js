@@ -4,10 +4,17 @@ class Customer {
         this.email = email;
         this.shippingAddress = shippingAddress;
         this.orderHistory = [];
+        this.rewardPoints = 0;
     }
 
     addToOrderHistory(cart) {
         this.orderHistory.push(cart);
+    }
+
+    getRewardPoints() {
+        this.orderHistory.forEach((order) => {
+            this.rewardPoints += order.rewardPoints;
+        })
     }
 }
 
