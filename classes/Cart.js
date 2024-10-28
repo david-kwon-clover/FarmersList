@@ -4,9 +4,17 @@ class Cart {
         this.total = 0;
     }
 
-    addProduct(product) {
+    addProduct(product, quantity) {
+        if(product.quantity < quantity) {
+            throw new Error(`I'm sorry there are only ${product.quantity} of this product left`);
+        }
         this.products.push(product);
         this.total += product.price;
+        product.quantity -= 1;
+        if(product.quantity === 0) {
+            product.inStock = false;
+        }
+        return product;
     }
 
     removeProduct(index) {
